@@ -4,25 +4,24 @@
 /* “IF condition → THEN decision”
 IF Temp > 80 AND Current > 12 → FAULT
 ELSE → NORMAL
-[ ] */
+*/
 
 import numpy as np
+import pandas as pd
+
 from sklearn.tree import DecisionTreeClassifier
 
-[ ]
 
 # Input: [Temperature, Current] (training data)
-X =np.array([[5, 1],[10,2],[15,3],[20,4],[25,5],[30,6]])
-y=np.array([0,0,1,0,1,1])
+data = pd.read_csv("data/sample_data.csv")
 
-[ ]
+X = data[["Temp", "Current"]].values
+y = data["Fault"].values
 
 #Model
 model = DecisionTreeClassifier(max_depth=3)
 #Train
 model.fit(X,y)
-
-[ ]
 
 #Test
 test = np.array([[13,5]])
@@ -36,8 +35,6 @@ if prediction[0] == 1:
   print("Fault")
 else:
   print("Normal")
-
-[ ]
 
 from sklearn.tree import export_text
 
