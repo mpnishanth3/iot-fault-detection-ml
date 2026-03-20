@@ -29,3 +29,19 @@ test = np.array([[13,5]])
 prediction = model.predict(test)
 
 print("Prediction:",prediction[0])
+
+#decision
+
+if prediction[0] == 1:
+  print("Fault")
+else:
+  print("Normal")
+
+[ ]
+
+from sklearn.tree import export_text
+
+tree_rules = export_text(model, feature_names=["Temp", "Current"])
+print(tree_rules)
+
+print(model.feature_importances_)
