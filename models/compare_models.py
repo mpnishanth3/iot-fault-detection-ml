@@ -1,16 +1,16 @@
 import numpy as np
+import pandas as pd
+
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 
 # Data
-X = np.array([
-    [5,1],[10,2],[15,3],
-    [20,4],[25,5],[30,6]
-])
+data = pd.read_csv("data/sample_data.csv")
 
-y = np.array([0,0,0,1,1,1])
+X = data[["Temp", "Current"]].values
+y = data["Fault"].values
 
 # Models
 models = {
