@@ -3,11 +3,16 @@
 #Goal: Build a high-accuracy, robust model for fault detection 
 
 import numpy as np
+import pandas as pd
+
 from sklearn.ensemble import RandomForestClassifier
 
 # Input: [Temperature, Current] (training data)
-X =np.array([[5, 1],[10,2],[15,3],[20,4],[25,5],[30,6]])
-y=np.array([0,0,0,1,1,1])
+data = pd.read_csv("data/sample_data.csv")
+
+X = data[["Temp", "Current"]].values
+y = data["Fault"].values
+
 
 #Model
 model=RandomForestClassifier(n_estimators=200, random_state=42)
