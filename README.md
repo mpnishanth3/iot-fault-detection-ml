@@ -27,16 +27,16 @@ It demonstrates how Machine Learning models can be applied to **industrial autom
 
 ---
 
-## 🧪 Example
+## 📊 Model Performance
 
-Input:
-Temperature = 48
-Current = 8
+| Model               | Accuracy |
+| ------------------- | -------- |
+| Logistic Regression | 1.0      |
+| Decision Tree       | 1.0      |
+| Random Forest       | 1.0      |
 
-Output:
-⚠️ Fault Detected
+> Note: Dataset is small. Real-world performance improves with more data.
 
----
 
 ## 🏗️ Project Structure
 
